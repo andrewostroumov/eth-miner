@@ -2,14 +2,12 @@ FROM ubuntu:16.04
 
 WORKDIR /rig
 
+# RUN dpkg --add-architecture i386
+
 RUN apt-get update
-RUN apt-get install xz-utils
 
-ADD . /rig
+RUN apt-get install build-essential curl libcurl3 -y
 
-RUN uname -m
+COPY claymore-miner /rig/claymore-miner
 
-RUN tar -Jxvf amdgpu-pro-17.10-414273.tar.xz
-RUN ./amdgpu-pro-17.10-414273/amdgpu-pro-install -y
-
-CMD "/rig/claymore-miner/start"
+CMD /rig/claymore-miner/start

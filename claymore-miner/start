@@ -1,0 +1,13 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+export GPU_MAX_ALLOC_PERCENT=100
+export GPU_SINGLE_ALLOC_PERCENT=100
+
+# ETC
+#./ethdcrminer64 -epool etc-eu1.nanopool.org:19999 -ewal 0xe4a63d28df18f3dceaa7d935bc8c2e8a57f8dcf4.Rig1/andrew.ostroumov@gmail.com -epsw x -mode 1
+
+# ETH
+./ethdcrminer64 -epool eth-eu1.nanopool.org:9999 -ewal 0x69b96a700acf62726c413024c5bdc6c2d82754b5.Rig1/andrew.ostroumov@gmail.com -epsw x -mode 1
